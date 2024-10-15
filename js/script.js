@@ -151,11 +151,13 @@ $(document).ready(function () {
             $.ajax({
                 method: "POST",
                 url: "https://testologia.ru/checkout",
+                contentType: "application/json", // Указываем тип контента
                 data: {name: nameInput.val(), phone: phoneInput.val(), time: inputExtra.val()}
+          
             })
                 .done(function (message) {
                     loader.hide();
-                    if (message.success) {
+                    if (message && typeof message.success !== 'undefined') {
                         $('#orderTitle').fadeOut();
                         $('#orderText').fadeOut();
                         $('#orderTitleSuccess').fadeIn();
