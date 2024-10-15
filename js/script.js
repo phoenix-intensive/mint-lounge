@@ -150,7 +150,7 @@ $(document).ready(function () {
             loader.css('display', 'flex');
             $.ajax({
                 method: "POST",
-                url: "http://testologia.site/checkout",
+                url: "http://testologia.ru/checkout",
                 data: {name: nameInput.val(), phone: phoneInput.val(), time: inputExtra.val()}
             })
                 .done(function (message) {
